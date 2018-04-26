@@ -571,5 +571,5 @@ else()
       > ${CMAKE_CURRENT_SOURCE_DIR}/python/py_doc.h)
 
 endif()
-
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 # vim: set et ts=2 sw=2 ft=cmake nospell:
