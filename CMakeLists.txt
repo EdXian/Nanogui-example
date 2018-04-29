@@ -19,9 +19,30 @@ add_definitions(${NANOGUI_EXTRA_DEFS})
 include_directories(${NANOGUI_EXTRA_INCS})
 
 
-add_executable( gui  main.cpp   )
+add_executable( gui2  gui2.cpp   )
+target_link_libraries(gui2 nanogui ${NANOGUI_EXTRA_LIBS})
 
 
-target_link_libraries(gui nanogui ${NANOGUI_EXTRA_LIBS})
+add_executable( gui1  gui1.cpp   )
+target_link_libraries(gui1 nanogui ${NANOGUI_EXTRA_LIBS})
 
 
+add_executable( gui3  gui3.cpp   )
+target_link_libraries(gui3 nanogui ${NANOGUI_EXTRA_LIBS})
+
+add_executable( gui4  gui4.cpp   )
+target_link_libraries(gui4 nanogui ${NANOGUI_EXTRA_LIBS})
+
+
+
+set(CPACK_PACKAGE_NAME "gui")
+set(CPACK_PACKAGE_VENDOR "edxian.org")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "gui example")
+set(CPACK_PACKAGE_VERSION "1.0.0")
+set(CPACK_PACKAGE_VERSION_MAJOR "1")
+set(CPACK_PACKAGE_VERSION_MINOR "0")
+set(CPACK_PACKAGE_VERSION_PATCH "0")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "gui")
+set(CPACK_NSIS_MODIFY_PATH ON)
+#set(CPACK_GENERATOR WIX)
+include(CPack)
